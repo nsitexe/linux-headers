@@ -1,0 +1,11 @@
+Source: riscv64-linux-headers
+Section: devel
+Priority: optional
+Maintainer: Katsuhiro Suzuki <katsuhiro_suzuki@nsitexe.co.jp>
+Standards-Version: 3.9.7
+Build-Depends: debhelper (>= 9)
+
+Package: riscv64-linux-headers
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Linux kernel headers for RISC-V processors

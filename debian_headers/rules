@@ -1,0 +1,33 @@
+#!/usr/bin/make -f
+
+%:
+	PATH=$(PREFIX)/bin:$(PATH) \
+	    dh $@
+
+build_dir = build
+
+PREFIX = /opt/riscv
+
+PWD := $(shell pwd)
+PKGVER := $(shell head -1 PKGVERSION)
+
+define install_macro
+	$(eval PROJ = $(1))
+	$(MAKE) \
+	  ARCH=riscv \
+	  INSTALL_HDR_PATH=$(PWD)/debian/$(PROJ)/$(PREFIX)/sysroot/usr \
+	  headers_install
+endef
+
+override_dh_auto_clean:
+	make clean
+
+override_dh_auto_configure:
+
+override_dh_auto_build:
+
+# Ignore tests
+override_dh_auto_test:
+
+override_dh_auto_install:
+	$(call install_macro,riscv64-linux-headers)

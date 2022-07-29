@@ -1,0 +1,5 @@
+riscv64-linux-headers (5.10.0-2) stable; urgency=medium
+
+  * linux-5.10.0
+
+ -- Katsuhiro Suzuki <katsuhiro_suzuki@nsitexe.co.jp>  Fri, 29 Jul 2022 00:00:00 +0000
